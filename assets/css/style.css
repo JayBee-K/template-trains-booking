@@ -1030,6 +1030,14 @@
     z-index: 1;
 }
 
+.page-checkin__top {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .section-checkin__wrap {
     display: flex;
     align-items: center;
@@ -1042,8 +1050,10 @@
 
 
 .section-checkin {
-    padding: 10px;
-    position: absolute;
+
+    /*  position: absolute;
+     padding: 10px;
+     */
     left: 0;
     width: 100%;
     height: 100%;
@@ -1138,6 +1148,10 @@
     width: 400px;
 }
 
+.page-checkin .form-check {
+    font-size: 1.1em;
+}
+
 .page-checkin .booking-form__group .icon svg {
     width: 20px;
     height: 20px;
@@ -1190,14 +1204,59 @@
     flex-shrink: 0;
 }
 
+
 .checkin-list__check .form-check-label {
     font-weight: 700;
     font-size: 1.2em;
 }
 
+
 .form-check-input:checked {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
+}
+
+.page-checkin__table {
+    padding: 20px;
+    border-radius: 20px;
+    background-color: var(--primary-100);
+    width: 35vw;
+    height: 300px;
+    box-shadow: 2px 2px 12px -2px rgba(241, 242, 244, 0.25), 0px 0px 1px 0px rgba(147, 1, 101, 0.10);
+}
+
+.checkin-table__header.checkin-table__item {
+    font-weight: 800 !important;
+    font-size: 1.2em;
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid var(--primary-50);
+}
+
+.checkin-table__item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: left;
+    padding: 10px 0;
+}
+
+.checkin-table__item .table-number {
+    width: 20%;
+}
+
+.checkin-table__item .table-name {
+    width: 60%;
+
+}
+
+.checkin-table__item .table-person {
+    width: 30%;
+}
+
+.checkin-table__item:not(:last-child) {
+
 }
 
 
@@ -1225,6 +1284,10 @@
     .page-checkin .button-custom__submit svg {
         width: 20px;
         height: 10px;
+    }
+
+    .page-checkin__table {
+        width: 70vw;
     }
 }
 
@@ -1342,6 +1405,10 @@
     .page-checkin .cart-form__input .input-form {
         height: 43px;
         font-size: 0.9em;
+    }
+
+    .page-checkin__table {
+        width: 90vw;
     }
 }
 

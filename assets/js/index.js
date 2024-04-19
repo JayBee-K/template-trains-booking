@@ -134,20 +134,19 @@
         let sectionLoad = $('#section-load');
         let sectionCheckList = $('#section-checklist');
         let sectionBooking = $('#form-booking');
+        let sectionTicket = $('#section-ticket');
+        let btnPrevious = $('.btn-previous');
+        btnPrevious.fadeOut();
 
         let btnCheckIn = $('#btn-checkin');
         if (btnCheckIn.length) {
             btnCheckIn.click(function (e) {
                 e.preventDefault();
                 handleLoading();
+                btnPrevious.fadeIn();
 
                 sectionCheckin.addClass('hide');
                 sectionPhone.removeClass('hide');
-
-                $('#section-phone .btn-previous').click(function(){
-                    sectionCheckin.removeClass('hide');
-                    sectionPhone.addClass('hide');
-                });
 
             })
         }
@@ -164,20 +163,11 @@
                     sectionLoad.removeClass('hide');
                     sectionPhone.addClass('hide');
 
-                    $('#section-load .btn-previous').click(function(){
-                        sectionLoad.addClass('hide');
-                        sectionPhone.removeClass('hide');
-                    });
                 } else if ((inputNumber !== "") && !$.isNumeric(inputNumber)) {
                     handleLoading();
                     sectionCheckList.removeClass('hide');
                     sectionPhone.addClass('hide');
                     $('.page-checkin').css({"height": "100% !important","overflow": "visible"});
-
-                    $('#section-checklist .btn-previous').click(function(){
-                        sectionCheckList.addClass('hide');
-                        sectionPhone.removeClass('hide');
-                    });
 
                 } else {
                     $('#popup-checkphone').modal('show');
@@ -226,7 +216,18 @@
             })
         }
 
+        let btnSubmitTicket = $('.submit-ticket');
+        if (btnSubmitTicket.length) {
+            btnSubmitTicket.click(function (e) {
+                e.preventDefault();
+                handleLoading();
 
+                sectionBooking.addClass('hide');
+                sectionTicket.removeClass('hide');
+                $('.page-checkin').css({"height": "100% !important","overflow": "visible"});
+
+            })
+        }
 
 
     }
