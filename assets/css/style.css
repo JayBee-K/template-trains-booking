@@ -1036,6 +1036,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding-top: 70px;
 }
 
 .section-checkin__wrap {
@@ -1165,6 +1166,10 @@
 .page-checkin .button-previous {
     gap: 6px;
     width: max-content;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    z-index: 4;
 }
 
 .page-checkin .button-custom__submit {
@@ -1294,6 +1299,10 @@
 @media (max-width: 992px) {
     .page-checkin .page-cart__booking {
         padding: 30px 45px;
+    }
+    .page-checkin .button-previous {
+        left: 15px;
+        top: 15px;
     }
 
     .page-checkin__heading {
