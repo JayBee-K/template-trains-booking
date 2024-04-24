@@ -1314,6 +1314,11 @@
     gap: 3px;
 }
 
+.checkin-table__item .table-button:hover,
+.table-button-update:hover{
+    opacity: 0.8;
+}
+
 .checkin-table__item .table-input {
     background: transparent;
     border: 0;
