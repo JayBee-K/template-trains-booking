@@ -116,6 +116,19 @@
         }
     }
 
+    const handleHeaderScroll = function (e) {
+        $(window).scroll(function (e) {
+            if($('#checkin-header').length){
+                if ($(document).scrollTop() > $('#checkin-header').innerHeight()) {
+                    $('body').addClass('is-scroll');
+                } else {
+                    $('body').removeClass('is-scroll');
+                }
+            }
+
+        });
+    }
+
 
     // =============================form checkin=========================
 
@@ -135,15 +148,16 @@
         let sectionCheckList = $('#section-checklist');
         let sectionBooking = $('#form-booking');
         let sectionTicket = $('#section-ticket');
-        let btnPrevious = $('.btn-previous');
-        btnPrevious.fadeOut();
+
+        let headerCheckIn = $('.page-checkin__header');
+            headerCheckIn.fadeOut();
 
         let btnCheckIn = $('#btn-checkin');
         if (btnCheckIn.length) {
             btnCheckIn.click(function (e) {
                 e.preventDefault();
                 handleLoading();
-                btnPrevious.fadeIn();
+                headerCheckIn.fadeIn();
 
                 sectionCheckin.addClass('hide');
                 sectionPhone.removeClass('hide');
@@ -236,6 +250,7 @@
         handleSelectInput();
         handleSliderCalendar();
         handleSliderClock();
+        handleHeaderScroll();
         handleCheckNumberPhone();
     });
 
