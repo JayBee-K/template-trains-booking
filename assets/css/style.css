@@ -1163,13 +1163,13 @@
 .page-checkin .form-check {
     font-size: 1.1em;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 10px;
 }
 
 .page-checkin .form-group .form-check input[type="radio"] {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     flex-shrink: 0;
 }
 
@@ -1214,8 +1214,8 @@
 }
 
 .checkin-list__check .form-check__input {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     margin-top: 0;
     flex-shrink: 0;
 }
@@ -1284,6 +1284,9 @@
 
 .checkin-table__item .table-tool {
     width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .checkin-table__item .table-box {
@@ -1291,6 +1294,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+
 }
 
 .checkin-table__item .table-box:not(:first-child) {
@@ -1306,16 +1310,18 @@
     font-weight: 700;
     border-radius: 10px;
     padding: 6px 18px;
-    width: 140px;
+    width: 100%;
+    max-width: 140px;
     font-size: 0.9em;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 3px;
+    white-space: nowrap;
+    gap: 5px;
 }
 
 .checkin-table__item .table-button:hover,
-.table-button-update:hover{
+.table-button-update:hover {
     opacity: 0.8;
 }
 
@@ -1441,6 +1447,7 @@
         grid-area: e;
         width: unset;
         flex-direction: column;
+        align-items: flex-start;
     }
 }
 
